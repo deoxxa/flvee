@@ -1,0 +1,25 @@
+{
+  "name": "flv",
+  "version": "0.0.0",
+  "description": "Flash Video (FLV)",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/deoxxa/flv.git"
+  },
+  "keywords": [
+    "flv",
+    "video",
+    "flash",
+    "parser",
+    "serialiser",
+    "binary"
+  ],
+  "author": "Conrad Pankoff <deoxxa@fknsrs.biz> (http://www.fknsrs.biz/)",
+  "license": "BSD",
+  "dependencies": {
+    "compost": "0.0.1",
+    "amf": "~0.1.0"
+  }
+}
