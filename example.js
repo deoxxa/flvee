@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-var flv = require("./"),
+var flvee = require("./"),
     fs = require("fs"),
     stream = require("stream");
 
-var parser = new flv.Parser(),
-    serialiser = new flv.Serialiser();
+var parser = new flvee.Parser(),
+    serialiser = new flvee.Serialiser();
 
 parser.on("readable", function() {
   var e;

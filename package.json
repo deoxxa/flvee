@@ -1,12 +1,12 @@
 {
-  "name": "flv",
+  "name": "flvee",
   "version": "0.0.0",
   "description": "Flash Video (FLV)",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git://github.com/deoxxa/flv.git"
+    "url": "git://github.com/deoxxa/flvee.git"
   },
   "keywords": [
     "flv",

@@ -1,5 +1,5 @@
-FLV
-===
+FLV: Extreme Edition
+====================
 
 Flash Video (FLV) parser and serialiser
 
@@ -13,9 +13,9 @@ Super Quickstart
 
 ```javascript
 var fs = require("fs"),
-    flv = require("flv");
+    flvee = require("flvee");
 
-var parser = new flv.Parser();
+var parser = new flvee.Parser();
 
 fs.createReadStream("in.flv").pipe(parser);
 
@@ -32,11 +32,11 @@ Installation
 
 Available via [npm](http://npmjs.org/):
 
-> $ npm install flv
+> $ npm install flvee
 
 Or via git:
 
-> $ git clone git://github.com/deoxxa/flv.git node_modules/flv
+> $ git clone git://github.com/deoxxa/flvee.git node_modules/flvee
 
 Usage
 -----
@@ -58,18 +58,18 @@ parser is initialised with `strictMode: true`, it will throw an error when an
 invalid footer value is encountered.
 
 ```javascript
-new flv.Parser(options, strictMode);
+new flvee.Parser(options, strictMode);
 ```
 
 ```javascript
 // basic instantiation
-var parser = new flv.Parser();
+var parser = new flvee.Parser();
 
 // instantiation with strict mode
-var parser = new flv.Parser(null, true);
+var parser = new flvee.Parser(null, true);
 
 // instantiation with some options to go through to stream.Transform
-var parser = new flv.Parser({highWaterMark: 10});
+var parser = new flvee.Parser({highWaterMark: 10});
 ```
 
 Arguments
@@ -91,15 +91,15 @@ information will be discarded if a `header` packet is written to the serialiser
 instance.
 
 ```javascript
-new flv.Serialiser(options, headerFields);
+new flvee.Serialiser(options, headerFields);
 ```
 
 ```javascript
 // basic instantiation
-var serialiser = new flv.Serialiser();
+var serialiser = new flvee.Serialiser();
 
 // instantiation with header information set
-var serialiser = new flv.Serialiser(null, {
+var serialiser = new flvee.Serialiser(null, {
   version: 1,
   flags: {
     "0": true,
@@ -108,7 +108,7 @@ var serialiser = new flv.Serialiser(null, {
 });
 
 // instantiation with some options to go through to stream.Transform
-var serialiser = new flv.Serialiser({highWaterMark: 10});
+var serialiser = new flvee.Serialiser({highWaterMark: 10});
 ```
 
 Arguments
@@ -130,12 +130,12 @@ Also see [example.js](https://github.com/deoxxa/flv/blob/master/example.js).
 
 // this script will dump out packet information
 
-var flv = require("flv"),
+var flvee = require("flvee"),
     fs = require("fs"),
     stream = require("stream");
 
-var parser = new flv.Parser(),
-    serialiser = new flv.Serialiser();
+var parser = new flvee.Parser(),
+    serialiser = new flvee.Serialiser();
 
 parser.on("readable", function() {
   var e;
