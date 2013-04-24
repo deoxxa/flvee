@@ -85,34 +85,45 @@ FLVSerialiser API
 **constructor**
 
 Constructs a new FLVSerialiser object. Like in FLVParser, `options` is an object
-that gets passed through to the `stream.Transform` constructor.
+that gets passed through to the `stream.Transform` constructor. `headerFields`
+is an object that sets default values for some of the header fields. This
+information will be discarded if a `header` packet is written to the serialiser
+instance.
 
 ```javascript
-new flv.Parser(options, strictMode);
+new flv.Serialiser(options, headerFields);
 ```
 
 ```javascript
 // basic instantiation
-var parser = new flv.Parser();
+var serialiser = new flv.Serialiser();
 
-// instantiation with strict mode
-var parser = new flv.Parser(null, true);
+// instantiation with header information set
+var serialiser = new flv.Serialiser(null, {
+  version: 1,
+  flags: {
+    "0": true,
+    "2": true,
+  },
+});
 
 // instantiation with some options to go through to stream.Transform
-var parser = new flv.Parser({highWaterMark: 10});
+var serialiser = new flv.Serialiser({highWaterMark: 10});
 ```
 
 Arguments
 
 * _options_ - an object that gets passed through to the `stream.Transform`
   constructor.
-* _strictMode_ - a boolean that controls whether the parser tries to validate
-  footer values or not.
+* _headerFields_ - an object that sets default values for some of the header
+  fields. The possible properties are `version` and `flags`. The `version` field
+  is an integer and the `flags` field is an object that is used to populate a
+  bitfield.
 
 Example
 -------
 
-Also see [example.js](https://github.com/deoxxa/pillion/blob/master/example.js).
+Also see [example.js](https://github.com/deoxxa/flv/blob/master/example.js).
 
 ```javascript
 #!/usr/bin/env node
