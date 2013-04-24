@@ -1,6 +1,6 @@
 {
   "name": "flvee",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Flash Video (FLV)",
   "main": "index.js",
   "scripts": {},
